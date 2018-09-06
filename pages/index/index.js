@@ -53,6 +53,7 @@ Page({
       'content-type': 'application/x-www-form-urlencoded',
     };
     var that = this;
+    console.log(app.globalData.uid);
     wx.request({
       url: app.globalData.url + '/routine/auth_api/index?uid=' + app.globalData.uid,
       method: 'POST',
