@@ -186,6 +186,11 @@ Page({
               icon: 'success',
               duration: 2000
             })
+            setTimeout(function () {
+              wx.navigateTo({
+                url: '/pages/orders-con/orders-con?order_id=' + that.data.orderId
+              })
+            }, 1500)
           }else{
             wx.showToast({
               title: res.data.msg,
