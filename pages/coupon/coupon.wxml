@@ -1,5 +1,5 @@
 <view class="header-ul flex">
-    <block wx:for="{{headerArray}}">
+    <block wx:for="{{headerArray}}" wx:key="headerArray">
         <view data-idx='{{index}}' class='header-li {{_active==index?"active":""}}' bindtap='headertap'>{{item}}</view>
     </block>
     <!-- <view class='header-li active'>全部</view> -->
@@ -8,7 +8,7 @@
     <view class='header-li'>已过期</view> -->
 </view>
 <view class='coupon-ul'>
-    <block wx:for="{{couponArray}}">
+    <block wx:for="{{couponArray}}" wx:key="couponArray">
         <view class='coupon-li flex {{(item.status==1||item.status==2)?"coupon-use":""}}'>
             <view class='coupon-text {{(!item.status)?"use-text":""}}'>
                <view class='coupon-term'>满{{item.use_min_price}}元使用</view>

@@ -6,12 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url: app.globalData.urlImages,
+    url: app.globalData.url,
     index: 0,
     orderId:'',
     dataimg:[],
     hidden:false,
-    array: ["请选择", "招商银行实打实打算", "建设银行实打实大苏打", "农业银行实打实大苏打"],
+    array: ["请选择", "招商银行", "建设银行", "农业银行"],
     order:[]
   },
 
@@ -43,9 +43,11 @@ Page({
       url: app.globalData.url + '/routine/auth_api/get_refund_reason?uid=' + app.globalData.uid,
       method: 'get',
       success: function (res) {
+        console.log(res.data.data)
         that.setData({
           array: res.data.data
         });
+        
       },
       fail: function (res) {
         console.log('submit fail');

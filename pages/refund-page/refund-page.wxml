@@ -1,7 +1,7 @@
 <view class="refundPage">
-      <block wx:for="{{order.cartInfo}}">
+      <block wx:for="{{order.cartInfo}}" wx:key="cartInfo">
           <view class='refundPage-header flex'>
-              <image src='{{url}}{{item.productInfo.image}}'></image>
+              <image src='{{item.productInfo.image}}'></image>
               <view class='header-left'>
                   <view class='left-title line'>{{item.productInfo.store_name}}</view>
                   <view class='left-con line'>{{item.productInfo.store_name}}</view>
@@ -37,7 +37,7 @@
                       <view>(最多可上传3张)</view>
                   </view>
                   <view>
-                      <block wx:for="{{dataimg}}">
+                      <block wx:for="{{dataimg}}" wx:key="dataimg">
                           <view class='up-img'>
                             <image src='{{url}}{{item}}'></image>
                             <icon class='iconfont icon-guanbi iconguan' data-index="{{index}}" bindtap='delImg'></icon>

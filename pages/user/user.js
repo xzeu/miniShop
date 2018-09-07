@@ -75,7 +75,7 @@ Page({
       header: header,
       success: function (res) {    
         that.setData({
-          // coupon: res.data.data.length
+          coupon: res.data.data.length
         })
       }
     })

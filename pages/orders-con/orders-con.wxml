@@ -46,7 +46,7 @@
   <view class='common-title'>商品信息</view>
   <view class='list-wrapper'>
     <view class='wrapper'>
-      <block wx:for="{{ordercon.cartInfo}}">
+      <block wx:for="{{ordercon.cartInfo}}" wx:key="cartInfo">
           <navigator hover-class='none' wx:if="{{!ordercon.seckill_id && !ordercon.bargain_id && !ordercon.combination_id}}" url='/pages/product-con/index?id={{item.productInfo.id}}'>
               <view class='item flex'>
                 <image src='{{url}}{{item.productInfo.image}}'></image>

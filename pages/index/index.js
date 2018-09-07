@@ -53,13 +53,13 @@ Page({
       'content-type': 'application/x-www-form-urlencoded',
     };
     var that = this;
-    console.log(app.globalData.uid);
+    // console.log(app.globalData.uid);
     wx.request({
       url: app.globalData.url + '/routine/auth_api/index?uid=' + app.globalData.uid,
       method: 'POST',
       header: header,
       success: function (res) {
-        console.log(res.data.data.banner);
+        // console.log(res.data.data.banner);
         that.setData({
           imgUrls: res.data.data.banner,
           recommendLsit: res.data.data.best,

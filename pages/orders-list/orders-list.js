@@ -53,7 +53,7 @@ Page({
           first: first + 1,
           orderlist: that.data.orderlist
         });
-        console.log(that.data.orderlist)
+        // console.log(that.data.orderlist)
         if (len < limit) {
           that.setData({
             title: "数据已经加载完成",
@@ -63,10 +63,10 @@ Page({
         }
       },
       fail: function (res) {
-        console.log('submit fail');
+        // console.log('submit fail');
       },
       complete: function (res) {
-        console.log('submit complete');
+        // console.log('submit complete');
       }
     });
   },
