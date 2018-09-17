@@ -63,6 +63,7 @@ Page({
     },//获取砍价产品
     getbargain: function () {
         var that = this;
+      // console.log(that.data.bargainId)
         wx.request({
             url: app.globalData.url + '/routine/auth_api/get_bargain?uid=' + app.globalData.uid,
             data: { bargainId: that.data.bargainId },
@@ -86,6 +87,7 @@ Page({
                         that.getUserInfo();
                         that.getBargainHelpCount();
                     }
+                  // console.log(that.data.product.description)
                     if (that.data.product.description) WxParse.wxParse('description', 'html', that.data.product.description, that, 0);
                     if (that.data.product.rule) WxParse.wxParse('rule', 'html', that.data.product.rule, that, 0);
                 } else {

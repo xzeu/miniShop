@@ -1,4 +1,4 @@
-var URl = 'https://qipei.9gt.net';
+var URl = 'https://api.xzeu.com';
 // var apikey = '?appid=21&appkey=zb34e7d15453e97507ef794cf7b051zbefvgfdedfgt'
 //购物车减
 var carmin = function (that){

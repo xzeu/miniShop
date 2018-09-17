@@ -160,7 +160,9 @@ Page({
       data: {
         formId: e.detail.formId
       },
-      success: function (res) { }
+      success: function (res) {
+        // console.log(res);
+       }
     })
     wx.request({
       url: app.globalData.url + '/routine/auth_api/now_buy?uid=' + app.globalData.uid,
@@ -173,6 +175,7 @@ Page({
         secKillId: 0
       },
       success: function (res) {
+        // console.log(res);
         if (res.data.code == 200) {
           if (pinkId) {
             wx.navigateTo({ //跳转至指定页面并关闭其他打开的所有页面（这个最好用在返回至首页的的时候）

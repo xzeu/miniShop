@@ -2,9 +2,9 @@
   <image src='{{banner.img}}'></image>
 </view>
 <view class='pink-list-wrapper'>
-  <block wx:for="{{CombinationList}}">
+  <block wx:for="{{CombinationList}}" wx:key="CombinationList">
     <view class='item flex'>
-      <navigator class='flex' hover-class='none'>
+      <view class='flex' hover-class='none'>
         <image src='{{url}}{{item.image}}'></image>
         <view class='pro-info flex'>
           <view class='title'>{{item.title}}</view>
@@ -22,7 +22,7 @@
             <view class='icon'></view>
           </view>
         </view>
-      </navigator>
+      </view>
     </view>
   </block>
 </view>

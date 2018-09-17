@@ -1,6 +1,6 @@
 <view class="header"></view>
 <view class='address_ul'>
-    <block wx:for="{{addressArray}}">
+    <block wx:for="{{addressArray}}" wx:key="addressArray">
         <view class='address_li'>
              <view class='addressx' data-id="{{item.id}}" bindtap='goOrder'>
                   <view class='addressName'>收货人：{{item.real_name}}<text class='addressphone'>{{item.phone}}</text></view>

@@ -1,6 +1,6 @@
 <view class='swiper_banner'>
   <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActivecolor}}">
-    <block wx:for="{{storeInfo.images}}">
+    <block wx:for="{{storeInfo.images}}" wx:key="storeInfo">
       <swiper-item>
         <image src="{{url}}{{item}}" class="slide-image"/>
       </swiper-item>
@@ -12,8 +12,8 @@
     <view class='title'>{{storeInfo.title}}</view>
     <view class='price-wrapper flex'>
       <view class='left flex'>
-        <view class='price'><text>￥</text>{{storeInfo.price}}</view>
-        <view class='old-price'>￥{{storeInfo.product_price}}</view>
+        <view class='price'><text>￥</text>{{storeInfo.price}} 元</view>
+        <view class='old-price'>￥{{storeInfo.product_price}} 元</view>
       </view>
     </view>
   </view>
@@ -24,7 +24,7 @@
     <view class='right-wrapper' bindtap="showList">查看更多</view>
   </view>
   <view class='list-item'>
-  <block wx:for="{{pinking}}" wx:if="{{index < 2}}">
+  <block wx:for="{{pinking}}" wx:key="pinking" wx:if="{{index < 2}}">
     <navigator class='item flex' hover-class='none'>
       <view class='left-wrapper flex' bindtap='goPink' data-id="{{item.id}}">
         <image src='{{item.avatar}}'></image>
@@ -105,7 +105,7 @@
 <view class="pinklist-model {{show==true ? 'show':''}}">
   <view class='tit-bar'>正在拼单</view>
   <scroll-view scroll-y style="max-height:635rpx;">
-     <block wx:for="{{pinking}}" wx:if="{{index < 10}}">
+     <block wx:for="{{pinking}}" wx:key="pinking" wx:if="{{index < 10}}">
           <view class='item flex'>
               <view class='left-wrapper' bindtap='goPink' data-id="{{item.id}}">
                 <image src='{{item.avatar}}'></image>

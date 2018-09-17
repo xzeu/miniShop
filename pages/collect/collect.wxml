@@ -1,7 +1,7 @@
 <view class="collect">
   <view class='collect-title'>您收藏了<text class='title-num'>{{sum}}</text>件商品</view>
   <view class='collect-ul'>
-     <block wx:for="{{Arraylist}}">
+     <block wx:for="{{Arraylist}}" wx:key="Arraylist">
       
          <view class='collect-li flex'>
            <navigator  url="/pages/product-con/index?id={{item.pid}}" hover-class="none">

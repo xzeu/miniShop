@@ -38,7 +38,7 @@
             <view class='img-box'><image src='{{url}}{{item.image}}'></image></view>
             <view class='pro-info'>
               <view class='pro-title'>{{item.store_name}}</view>
-              <view class='price-small'>￥{{item.price}}</view>
+              <view class='price-small'>￥{{item.price}}元</view>
             </view>
           </navigator>  
         </view>
@@ -59,7 +59,7 @@
         <navigator class='flex' hover-class="none" url="/pages/product-con/index?id={{item.id}}">
           <view class='text-box flex'>
             <view class='title'>{{item.store_name}}</view>
-            <view class='price'><text>￥</text>{{item.price}}</view>
+            <view class='price'><text>￥</text>{{item.price}}元</view>
           </view>
           <view class='img-box'><image src='{{url}}{{item.image}}'></image></view>
         </navigator>
@@ -85,7 +85,7 @@
           <view class='img-box'><image src='{{url}}{{item.image}}'></image></view>
           <view class='text-info'>
             <view class='title'>{{item.store_name}}</view>
-            <view class='price'>￥{{item.price}}</view>
+            <view class='price'>￥{{item.price}}元</view>
           </view>
         </navigator>
       </view>

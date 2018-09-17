@@ -1,6 +1,6 @@
 <view class='swiper_banner'>
   <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActivecolor}}">
-    <block wx:for="{{SeckillList.images}}">
+    <block wx:for="{{SeckillList.images}}" wx:key="SeckillList">
       <swiper-item>
         <image src="{{url}}{{item}}" class="slide-image"/>
       </swiper-item>

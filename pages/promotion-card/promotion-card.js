@@ -8,7 +8,8 @@ Page({
   data: {
     url: app.globalData.url,
     code:'',
-    userinfo: app.globalData
+    userinfo: app.globalData,
+    name: app.globalData.name,
   },
 
   /**
@@ -24,7 +25,7 @@ Page({
       method: 'POST',
       header: header,
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         if (res.data.code == 200) {
 
           that.setData({
@@ -49,6 +50,7 @@ Page({
       method: 'get',
       header: header,
       success: function (res) {
+        console.log(res);
         if (res.data.code == 200) {
           that.setData({
             code: res.data.msg

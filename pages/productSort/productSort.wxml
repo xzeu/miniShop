@@ -22,7 +22,7 @@
     </view>
 </view>
 <view class='productSort flex'>
-         <block wx:for="{{Arraylike}}"  >
+         <block wx:for="{{Arraylike}}" wx:key="Arraylike" >
          
              <view class='productSort-list {{_num==1?"productSort-list2":""}}'>
                       <navigator url="/pages/product-con/index?id={{item.id}}" hover-class="none"    bindtap='details'>
@@ -52,7 +52,7 @@
             </view>
         </view>
         <view animation="{{animationData}}" class='down-er'>
-            <block wx:for="{{sorter}}">
+            <block wx:for="{{sorter}}" wx:key="sorter">
               <view class='downs-title' data-ider='{{item.id}}'  bindtap='wholeproduct' wx:if="{{!item.pid}}">
                 {{item.cate_name}}
                 <text class='iconfont {{taber==item.id?"icon-duihao sortd":""}}'></text>

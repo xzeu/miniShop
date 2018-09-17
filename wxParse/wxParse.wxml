@@ -944,7 +944,7 @@
     <block wx:elif="{{item.tagType == 'block'}}">
       <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-          <template is="wxParse12" data="{{item}}" />
+          <template is="wxParse12" data="{{item}}" ></template>
         </block>
       </view>
     </block>

@@ -11,14 +11,14 @@
   <view class='common-title'>商品信息</view>
   <view class='list-wrapper'>
     <view class='wrapper'>
-      <view class='item flex' wx:for="{{cartInfo}}">
+      <view class='item flex' wx:for="{{cartInfo}}" wx:key="cartInfo">
         <image src='{{url}}{{item.productInfo.attrInfo.image}}' wx:if="{{item.productInfo.attrInfo}}"></image>
         <image src='{{url}}{{item.productInfo.image}}' wx:else></image>
         <view class='pro-info'>
           <view class='title'>{{item.productInfo.store_name}}</view>
           <view class='res' wx:if="{{item.productInfo.attrInfo}}">{{item.productInfo.attrInfo.suk}}</view>
-          <view class='price' wx:if="{{item.productInfo.attrInfo}}"><text>￥</text>{{item.productInfo.attrInfo.price}}<text class='count'>x{{item.cart_num}}</text></view>
-          <view class='price' wx:else><text>￥</text>{{item.productInfo.price}}<text class='count'>x{{item.cart_num}}</text></view>
+          <view class='price' wx:if="{{item.productInfo.attrInfo}}"><text>￥</text>{{item.productInfo.attrInfo.price}}元<text class='count'>x{{item.cart_num}}</text></view>
+          <view class='price' wx:else><text>￥</text>{{item.productInfo.price}}元<text class='count'>x{{item.cart_num}}</text></view>
         </view>
       </view>
     </view>
@@ -26,7 +26,7 @@
   <view class='text-wrapper'>
     <view class='text-item flex'>
       <text>运费</text>
-      <view class='select-btn'>快递<text>￥{{priceGroup.storePostage}}</text></view>
+      <view class='select-btn'>快递：<text>￥{{priceGroup.storePostage}}元</text></view>
     </view>
     <view class='text-item flex' wx:if="{{!seckillId && !BargainId  && !combinationId}}">
       <text>优惠券</text>
@@ -39,7 +39,7 @@
     </view>
   </view>
   <view class='all-price'>
-    共{{cartInfo.length}}件商品   共计：<text>￥{{priceGroup.totalPrice}}</text>
+    共{{cartInfo.length}}件商品   共计：<text>￥{{priceGroup.totalPrice}}元</text>
   </view>
 </view>
 <view class='payment-select'>
@@ -47,7 +47,7 @@
   <view class='warapper'>
     <view class='item '>
       <radio-group >
-          <label class='radio-wrapper'  wx:for="{{cartArr}}">
+          <label class='radio-wrapper'  wx:for="{{cartArr}}" wx:key="cartArr">
               <view class='left-wrapper flex'><view class='iconfont {{item.icon}}'></view> {{item.name}}</view>
               <radio value="{{index}}" wx:if="{{item.value == payType}}" checked='checked' bindtap="radioChange" data-value="{{item.value}}"></radio>
               <radio value="{{index}}" wx:else bindtap="radioChange" data-value="{{item.value}}"></radio>
@@ -72,9 +72,9 @@
 <view style='height:120rpx;'></view>
 <view class='foot flex'>
   <view class='text'>
-    合计: <text class='price'>￥{{priceGroup.totalPrice}}{{couponPrice}}</text>
+    合计: <text class='price'>￥{{priceGroup.totalPrice}}{{couponPrice}}元</text>
   </view>
-  <form bindsubmit="subOrder" report-submit='true'>
+  <form bindsubmit="subOrder" report-submit="true">
    <button class='submit-btn' formType="submit">立即结算</button>
   </form>
 </view>

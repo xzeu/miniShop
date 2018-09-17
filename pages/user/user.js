@@ -95,7 +95,7 @@ Page({
       header: header,
       success: function (res) {
         that.setData({
-          // collect: res.data.data.length
+          collect: res.data.data.length
         })
       }
     })

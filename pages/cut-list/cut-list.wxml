@@ -1,5 +1,5 @@
 <view class="catlist">
-<block wx:for="{{lovely}}">
+<block wx:for="{{lovely}}" wx:key="lovely">
   <image src='{{url}}{{item.img}}' wx:if="{{index == 2}}"></image>
 </block>
 </view>
@@ -7,7 +7,7 @@
    <image src='{{url}}{{titleImage.banner}}'></image>
     <view class="catlist-list">
        <swiper  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  indicator-active-color="{{indicatorActivecolor}}"  vertical="{{ vertical}}" circular="{{circular}}">
-          <block wx:for="{{title}}">
+          <block wx:for="{{title}}" wx:key="title">
             <swiper-item>
                 <view>{{item.info}}</view> 
             </swiper-item>
@@ -16,7 +16,7 @@
    </view> 
 </view>
 <view class='catlist-ul flex'>
-   <view class='catlist-li' wx:for="{{cutList}}" wx:for-item="item" data-id="{{item.id}}" bindtap='cut'>
+   <view class='catlist-li' wx:for="{{cutList}}" wx:key="cutList" wx:for-item="item" data-id="{{item.id}}" bindtap='cut'>
        <image src='{{url}}{{item.image}}' class='li-pic'></image>
        <view class='catlist-text line' >{{item.title}}</view>
        <view class='text-color'>

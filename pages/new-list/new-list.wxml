@@ -2,7 +2,7 @@
 <view class='top-banner img-wrapper'>
 	<swiper class="swiper-box" indicator-dots="{{indicatorDots}}"
 		autoplay="true" interval="{{interval}}" duration="{{duration}}" indicator-dots="true" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fc3b3b">
-		<block wx:for="{{bannerList}}">
+		<block wx:for="{{bannerList}}" wx:key="bannerList">
 			<swiper-item class="img-hox">
       <navigator url="/pages/new-con/new-con?id={{item.id}}" open-type="navigate">
 				<image src="{{item.image_input}}" class="slide-image" />
@@ -18,7 +18,7 @@
 <view class='slider-hot'>
   <view class='img-box'></view>
   <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
-    <block wx:for="{{hotList}}">
+    <block wx:for="{{hotList}}" wx:key="hotList">
       <navigator url="/pages/new-con/new-con?id={{item.id}}" open-type="navigate">
         <swiper-item>
           <view class="swiper_item">{{item.title}}</view>
@@ -28,7 +28,7 @@
   </swiper>
 </view>
 <view class='list-wrapper'>
-<block wx:for="{{newList}}">
+<block wx:for="{{newList}}" wx:key="newList">
   <view class='list-item'>
     <navigator class='flex' url="/pages/new-con/new-con?id={{item.id}}">
       <view class='text-box'>

@@ -31,7 +31,7 @@ Page({
         that.setData({
           banner: res.data.data
         })
-        console.log(that.data.banner);
+        // console.log(that.data.banner);
       }
     })
   },

@@ -88,7 +88,7 @@ Page({
         id: that.data.seckillId
       },
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         that.setData({
           SeckillList: res.data.data.storeInfo,
           replyCount: res.data.data.replyCount,

@@ -82,6 +82,7 @@ Page({
   },
   subOrder:function(e){
     var that = this;
+    console.log(that.data);
     var header = {
       'content-type': 'application/x-www-form-urlencoded',
     };
@@ -115,6 +116,7 @@ Page({
           mark: that.data.mark
         },
         success: function (res) {
+          // console.log(res)
           var data = res.data.data;
           if (res.data.code == 200 && res.data.data.status == 'SUCCESS'){
             wx.showToast({
@@ -321,6 +323,7 @@ Page({
     })
   },
   getConfirm: function (cartIdsStr){
+    // console.log(cartIdsStr);
     var that = this;
     var header = {
       'content-type': 'application/x-www-form-urlencoded',
@@ -329,7 +332,7 @@ Page({
       url: app.globalData.url + '/routine/auth_api/confirm_order?uid=' + app.globalData.uid,
       method: 'POST',
       data: {
-        cartId: cartIdsStr
+        cartId: cartIdsStr,
       },
       header: header,
       success: function (res) {
@@ -363,9 +366,9 @@ Page({
       BargainId: BargainId,
       combinationId:combinationId
     })
-    console.log(that.data.BargainId);
-    console.log(that.data.seckillId);
-    console.log(that.data.combinationId);
+    // console.log(that.data.BargainId);
+    // console.log(that.data.seckillId);
+    // console.log(that.data.combinationId);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

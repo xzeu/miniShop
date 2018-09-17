@@ -1,6 +1,6 @@
 <view class='swiper_banner'>
   <swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActivecolor}}">
-    <block wx:for="{{storeInfo.slider_image}}">
+    <block wx:for="{{storeInfo.slider_image}}" wx:key="slider_image">
       <swiper-item>
         <image src="{{url}}{{item}}" class="slide-image"/>
       </swiper-item>
@@ -24,8 +24,8 @@
       <action-sheet-cancel>取消</action-sheet-cancel>
   </action-sheet>
     <view class='price-wrapper flex'>
-      <view class='price'><text>￥</text>{{storeInfo.price}}</view>
-      <block wx:for="{{storeKeyWord}}" wx:if="{{index < 4}}">
+      <view class='price'><text>￥</text>{{storeInfo.price}}元</view>
+      <block wx:for="{{storeKeyWord}}" wx:key="storeKeyWord" wx:if="{{index < 4}}">
         <view class='small-txt red' wx:if="{{!index && item != ''}}">{{item}}</view>
         <view class='small-txt lv' wx:if="{{index == 1}}">{{item}}</view>
         <view class='small-txt chen' wx:if="{{index == 2}}">{{item}}</view>
@@ -33,7 +33,7 @@
       </block>
     </view>
     <view class='count-wrapper flex'>
-      <view>原价:￥{{storeInfo.ot_price}}</view>
+      <view>原价:￥{{storeInfo.ot_price}}元</view>
       <view>库存:{{storeInfo.stock}}{{storeInfo.unit_name}}</view>
       <view>销量:{{storeInfo.sales}}{{storeInfo.unit_name}}</view>
     </view>

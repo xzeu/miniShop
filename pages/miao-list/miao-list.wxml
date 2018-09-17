@@ -1,11 +1,11 @@
 <view class='miao-list'>
    <view class='header'>
-     <block wx:for="{{lovely}}">
+     <block wx:for="{{lovely}}" wx:key="lovely">
        <image wx:if="{{index == 1}}" src='{{url}}{{item.img}}' ></image>
      </block>
    </view>
    <view class='list-ul'>
-      <block wx:for="{{Arraylist}}" wx:index="{{item}}">
+      <block wx:for="{{Arraylist}}" wx:key="Arraylist" wx:index="{{item}}">
           <view class='list-li flex' data-id="{{item.id}}" bindtap='toProduct'>
               <view class='list-pos'>
                  <image src='{{url}}{{item.image}}' class='list-pic'></image>

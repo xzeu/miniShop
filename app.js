@@ -16,7 +16,8 @@ App({
     openPages:'',
     spid:0,
     urlImages: '',
-    url: 'https://api.xzeu.com/'
+    url: 'https://api.xzeu.com/',
+    appname: "卓创商城"
   },
   getRoutineStyle:function(){
     var that = this;
@@ -63,6 +64,7 @@ App({
             if (res.code) {
               userInfo.code = res.code;
               userInfo.spid = that.globalData.spid;
+              // console.log(userInfo);
               wx.request({
                 url: that.globalData.url + '/routine/login/index',
                 method: 'post',
