@@ -9,7 +9,7 @@
       <view class='pay-status flex'>
         <view class='left-wrapper'>
           <view class='status-txt'>状态: <text>{{item._status._msg}}</text></view>
-          <view class='all-price'>总价: <text>￥{{item.pay_price}}</text></view>
+          <view class='all-price'>总价: <text>￥{{item.pay_price}}元</text></view>
         </view>
         <navigator hover-class="none" url='/pages/refunding/refunding?id={{item.order_id}}' > 
           <view class='right-wrapper'>
@@ -25,7 +25,7 @@
               <view class='item-info flex'>
                 <view class='title'>{{item.productInfo.store_name}}</view>
                 <view class='res'>{{item.productInfo.store_name}}</view>
-                <view class='price' wx:if="{{item.productInfo.attrInfo}}"><text>￥</text>{{item.productInfo.attrInfo.price}}<text class='count'>X{{item.cart_num}}</text></view>
+                <view class='price' wx:if="{{item.productInfo.attrInfo}}"><text>￥</text>{{item.productInfo.attrInfo.price}}元<text class='count'>X{{item.cart_num}}</text></view>
                 <view class='price' wx:else><text>￥</text>{{item.productInfo.price}}<text class='count'>X{{item.cart_num}}</text></view>
               </view>
             </view>  

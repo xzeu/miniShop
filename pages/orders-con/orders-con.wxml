@@ -53,7 +53,7 @@
                 <view class='pro-info'>
                   <view class='title'>{{item.productInfo.store_name}}</view>
                   <view class='res'>{{item.productInfo.store_name}}</view>
-                  <view class='price'><text>￥</text>{{item.productInfo.price}}<text class='count'>x{{item.cart_num}}</text></view>
+                  <view class='price'><text>￥</text>{{item.productInfo.price}}元<text class='count'>x{{item.cart_num}}</text></view>
                 </view>
                 <navigator wx:if="{{ordercon._status._type==3}}" hover-class="none" url='/pages/comment-con/comment-con?unique={{item.unique}}&uni={{ordercon.order_id}}' class='assess-btn'>评价</navigator>
                 <view wx:elif="{{ordercon._status._type==4}}" class='assess-btn off'>已评价</view>
@@ -65,7 +65,7 @@
                 <view class='pro-info'>
                   <view class='title'>{{item.productInfo.store_name}}</view>
                   <view class='res'>{{item.productInfo.store_name}}</view>
-                  <view class='price'><text>￥</text>{{item.productInfo.price}}<text class='count'>x{{item.cart_num}}</text></view>
+                  <view class='price'><text>￥</text>{{item.productInfo.price}}元<text class='count'>x{{item.cart_num}}</text></view>
                 </view>
                 <navigator wx:if="{{ordercon._status._type==3}}" hover-class="none" url='/pages/comment-con/comment-con?unique={{item.unique}}' class='assess-btn'>评价</navigator>
                 <view wx:elif="{{ordercon._status._type==4}}" class='assess-btn off'>已评价</view>
@@ -77,21 +77,21 @@
   <view class='payment-info'>
     <view class='infos flex'>
       <text>运费</text>
-      <text class='count'>￥{{ordercon.pay_postage}}</text>
+      <text class='count'>￥{{ordercon.pay_postage}}元</text>
     </view>
     <view class='infos flex'>
       <text>商品总价</text>
-      <text class='count'>￥{{ordercon.total_price}}</text>
+      <text class='count'>￥{{ordercon.total_price}}元</text>
     </view>
     <view class='infos flex'>
       <text>折扣价</text>
-      <text class='count'>￥{{ordercon.deduction_price}}</text>
+      <text class='count'>￥{{ordercon.deduction_price}}元</text>
     </view>
   </view>
 </view>
 <view class='all-pay flex'>
   <text>实付款</text>
-  <text class='count'>￥{{ordercon.pay_price}}</text>
+  <text class='count'>￥{{ordercon.pay_price}}元</text>
 </view>
 <view class='text-wrapper'>
   <view class='common-title'>订单信息</view>
@@ -118,6 +118,6 @@
    <view wx:if="{{ordercon._status._type==2}}" class='pay-btn' bindtap='confirmOrder' data-uni='{{ordercon.order_id}}'>确认收货</view> 
    <view wx:if="{{ordercon._status._type==4}}" class='delete-btn' bindtap='delOrder' data-uni='{{ordercon.order_id}}'>删除订单</view>
    <!-- <navigator  wx:if="{{ordercon._status._type==3}}" hover-class="none" url='/pages/product-con/index'><view class='delete-btn'>再次购买</view></navigator> -->
-   <!-- <navigator wx:if="{{ordercon._status._type==3}}" hover-class="none" url='/pages/comment-con/comment-con?order_id={{ordercon.order_id}}'><view class='pay-btn'>立即评价</view></navigator>  -->
+   <navigator wx:if="{{ordercon._status._type==3}}" hover-class="none" url='/pages/comment-con/comment-con?order_id={{ordercon.order_id}}'><view class='pay-btn'>立即评价</view></navigator> 
    <navigator  wx:if="{{!ordercon.seckill_id && !ordercon.bargain_id && !ordercon.combination_id && (ordercon._status._type==3||ordercon._status._type==4)}}" hover-class="none" bindtap='goIndex'><view class='pay-btn'>再次购买</view></navigator> 
 </view>

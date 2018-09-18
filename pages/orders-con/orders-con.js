@@ -49,7 +49,7 @@ Page({
         var data = res.data.data;
         if (res.data.code == 200 && res.data.data.status == 'WECHAT_PAY') {
           var jsConfig = res.data.data.result.jsConfig;
-          // console.log(jsConfig);
+          console.log(jsConfig);
           wx.requestPayment({
             timeStamp: jsConfig.timeStamp,
             nonceStr: jsConfig.nonceStr,
@@ -74,11 +74,11 @@ Page({
                 icon: 'success',
                 duration: 1000,
               })
-              // setTimeout(function () {
-              //   wx.navigateTo({
-              //     url: '/pages/orders-con/orders-con?order_id=' + data.result.orderId
-              //   })
-              // }, 1200)
+              setTimeout(function () {
+                wx.navigateTo({
+                  url: '/pages/orders-list/orders-list'
+                })
+              }, 1200)
             },
             complete: function (res) {
               console.log(res);
@@ -88,11 +88,11 @@ Page({
                   icon: 'none',
                   duration: 1000,
                 })
-                // setTimeout(function () {
-                //   wx.navigateTo({ //跳转至指定页面并关闭其他打开的所有页面（这个最好用在返回至首页的的时候）
-                //     url: '/pages/orders-con/orders-con?order_id=' + data.result.orderId
-                //   })
-                // }, 1200)
+                setTimeout(function () {
+                  wx.navigateTo({ //跳转至指定页面并关闭其他打开的所有页面（这个最好用在返回至首页的的时候）
+                    url: '/pages/orders-list/orders-list'
+                  })
+                }, 1200)
               }
             },
           })

@@ -3,7 +3,7 @@
   <view class='txt-box flex'>
     <view class='title'>{{storeCombination.title}}</view>
     <view class='count'>{{storeCombination.people}}人团  销量：{{storeCombination.sales}}  库存：{{storeCombination.stock}}</view>
-    <view class='price flex'><text>￥</text>{{storeCombination.price}} <view class='old-price'>￥{{storeCombination.product_price}}</view></view>
+    <view class='price flex'><text>￥</text>{{storeCombination.price}}元<view class='old-price'>￥{{storeCombination.product_price}}元</view></view>
   </view>
 </view>
 <view class='con-wrapper'>
@@ -40,7 +40,7 @@
     <view class='line'></view>
   </view>
   <view class='list-wrapper flex'>
-  <block wx:for="{{storeCombinationHost}}">
+  <block wx:for="{{storeCombinationHost}}" wx:key="storeCombinationHost">
     <view class='item'>
       <navigator hover-class='none' url="/pages/product-pinke/index?id={{item.id}}">
         <image src='{{url}}{{item.image}}'></image>

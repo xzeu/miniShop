@@ -29,6 +29,7 @@ Page({
     }
   },
   getorderlist:function(e){
+    console.log(e)
     var header = {
       'content-type': 'application/x-www-form-urlencoded',
     };

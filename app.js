@@ -16,7 +16,7 @@ App({
     openPages:'',
     spid:0,
     urlImages: '',
-    url: 'https://api.xzeu.com/',
+    url: 'https://api.xzeu.com',
     appname: "卓创商城"
   },
   getRoutineStyle:function(){
